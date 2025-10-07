@@ -1,0 +1,33 @@
+@media (max-width: 790px) {
+    .menu {
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: 0;
+        top: 0;
+        padding: 20px;
+        background-color: var(--side-nav);
+    }
+
+    .menu .logo-toggle{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-toggle .sidebarClose{
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .nav-bar .nav-links {
+        flex-direction: column;
+        padding-top: 60px;
+
+    }
+    .nav-links li a{
+        display: block;
+        margin-top: 20px;
+    }
+}

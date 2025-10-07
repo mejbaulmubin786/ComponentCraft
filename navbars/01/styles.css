@@ -1,146 +1,144 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-:root {
+:root{
     --body-color: #E4E9F7;
-    --nav-color: #4070f4;
+    --nav-color: #4070F4;
     --side-nav: #010718;
     --text-color: #fff;
     --search-bar: #f2f2f2;
-    --serch-text: #010718;
+    --search-text: #010718;
 }
 
-body {
-    font-family: "Roboto", sans-serif;
+body{
+    height: 100vh;
     background-color: var(--body-color);
+    font-family: "Poppins", sans-serif;;
 }
 
-body.dark {
-    --body-color: #18191a;
+body.dark{
+    --body-color: #18191A;
     --nav-color: #242526;
+    --side-nav: #010718;
     --text-color: #ccc;
+    --search-bar: #242526;
+    /* --search-text: #010718; */
 }
-header {
 
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
     background-color: var(--nav-color);
-    padding: 20px;
-    color: white;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-
-    width: 70%;
-}
-
-header ul {
-    list-style: none;
-    display: flex;
-    width: 70%;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 0;
-    margin: 0;
-}
-
-ul li {
-    font-size: 18px;
+nav .nav-bar{
     position: relative;
-    transition: all 1s;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .nav-bar .logo a{
+ font-size: 25px;
+ text-decoration: none;
+ font-weight: 500;
+ color: var(--text-color);
+ font-weight: 500;
 }
 
-ul li::before {
+/* font-family: "Roboto", sans-serif; */
+.nav-bar .nav-links{
+display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-links li{
+    list-style: none;
+    margin: 0 5px;
+}
+
+.nav-links li a{
+    position: relative;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 10px;
+}
+
+.nav-links li a::before{
     content: '';
-    width: 6px;
-    height: 6px;
-    background-color: var(--text-color);
     position: absolute;
+    height: 6px;
+    width: 6px;
     border-radius: 50%;
-    bottom: -10px;
+    background-color: var(--text-color);
     left: 50%;
+    bottom: 0;
     transform: translateX(-50%);
     opacity: 0;
     transition: all 0.3s ease;
+
 }
 
-ul li:hover::before{
+.nav-links li a:hover::before{
     opacity: 1;
 }
 
-.korner-bar {
+.nav-bar .darkLight-searchBox{
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    width: 10%;
 }
-
-
-.logo {
-    width: 20%;
-    font-size: 25px;
-    font-weight: bold;
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchBox{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
 }
-
-.korner-bar i {
-    font-size: 20px;
-    cursor: pointer;
+.darkLight-searchBox .dark-light i,
+.darkLight-searchBox .searchBox i{
     position: absolute;
-    transition: all 0.3s;
     color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.korner-bar .dark-light {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+.dark-light i.sun{
+    opacity: 0;
+    pointer-events: none;
 }
-
-.korner-bar .dark-light i.moon {
+.dark-light.active i.sun{
+    opacity: 1;
+    pointer-events: auto;
+}
+.dark-light.active i.moon{
+    opacity: 0;
+    pointer-events: none;
+}
+.searchBox i.cancel{
     opacity: 0;
     pointer-events: none;
 }
 
-.korner-bar .dark-light i.sun {
+.searchBox.active i.cancel{
     opacity: 1;
     pointer-events: auto;
 }
-
-/* active হলে moon দেখাবে, sun লুকাবে কিন্তু এখানে .dark-light.active না লিখে যদি ভুল করে .dark-light:active এভাবে লিখতাম তবে মারাত্ব্ত সমস্যা দেখা দিত বাগ বের করা কঠিন হতো। */
-.korner-bar .dark-light.active i.moon {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.korner-bar .dark-light.active i.sun {
-    opacity: 0;
-    pointer-events: none;
-}
-
-
-.korner-bar .searchToggle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.korner-bar .searchToggle i.cancel {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.korner-bar .searchToggle.active i.cancel {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.korner-bar .searchToggle.active i.search {
+.searchBox.active i.search{
     opacity: 0;
     pointer-events: none;
 }

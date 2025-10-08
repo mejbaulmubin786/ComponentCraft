@@ -34,6 +34,7 @@ nav{
     height: 70px;
     width: 100%;
     background-color: var(--nav-color);
+    z-index: 100;
 }
 
 nav .nav-bar{
@@ -48,14 +49,23 @@ nav .nav-bar{
     align-items: center;
     justify-content: space-between;
 }
+nav .nav-bar .sidebarOpen{
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    /* display: none; */
+}
 nav .nav-bar .logo a{
- font-size: 25px;
- text-decoration: none;
+ font-size: 25px; 
  font-weight: 500;
  color: var(--text-color);
- font-weight: 500;
+ text-decoration: none;
 }
 
+.menu .logo-toggle{
+    display: none;
+}
 /* font-family: "Roboto", sans-serif; */
 .nav-bar .nav-links{
 display: flex;
@@ -182,6 +192,7 @@ display: flex;
     transform: rotate(-45deg);
     z-index: -1;
 }
+
 .search-field input{
     height: 100%;
     width: 100%;

@@ -1,15 +1,25 @@
 @media (max-width: 790px) {
+    
+    nav .nav-bar .sidebarOpen{
+    display: block;
+    }
+
     .menu {
         position: fixed;
         height: 100%;
         width: 320px;
-        left: 0;
+        left: -100%;
         top: 0;
         padding: 20px;
         background-color: var(--side-nav);
+        z-index: 100;
+        transition: all 0.4s ease;
     }
-
+nav.active .menu{
+left: 0;
+}
     .menu .logo-toggle{
+        display: block;
         width: 100%;
         display: flex;
         align-items: center;

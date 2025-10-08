@@ -206,10 +206,17 @@ display: flex;
     background-color: var(--search-bar);
 }
 
+body.dark .search-field input{
+    color: var(--text-color);
+}
 .search-field i{
     position: absolute;
     color: var(--nav-color);
     right: 15px;
     font-size: 22px;
     cursor: pointer;
+}
+
+body.dark .search-field i{
+    color: var(--text-color);
 }
